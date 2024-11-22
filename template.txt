@@ -1,0 +1,24 @@
+struct Challenge;
+
+type Output = bool;
+
+impl Challenge {
+    fn solve() -> Output {
+        true
+    }
+}
+
+fn main() {
+    let result = Challenge::solve();
+    println!("{result:?}");
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_solution() {
+        assert!(Challenge::solve())
+    }
+}
