@@ -1,5 +1,7 @@
 use std::{fs::File, io::Write};
 
+codember_rs::import_file!("../../data/challenge-02.txt");
+
 struct Challenge;
 
 type Output = bool;
@@ -35,9 +37,7 @@ impl Challenge {
 }
 
 fn main() {
-    let (valid, invalid): (Vec<_>, Vec<_>) = include_str!("../../data/challenge-02.txt")
-        .lines()
-        .partition(|f| Challenge::solve(f));
+    let (valid, invalid): (Vec<_>, Vec<_>) = FILE.lines().partition(|f| Challenge::solve(f));
 
     let mut output = File::create("output/challenge-02.log").unwrap();
 

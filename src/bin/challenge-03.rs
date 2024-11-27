@@ -1,3 +1,5 @@
+codember_rs::import_file!("../../data/challenge-03.txt");
+
 struct Challenge;
 
 type Output = u32;
@@ -17,7 +19,7 @@ impl Challenge {
 }
 
 fn main() {
-    let lines = include_str!("../../data/challenge-03.txt").lines();
+    let lines = FILE.lines();
 
     let mut parsed_lines = lines.map(|line| {
         line.split(' ')
